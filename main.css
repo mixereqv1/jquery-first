@@ -40,3 +40,10 @@ body .active {
   padding: 5px;
   cursor: pointer;
 }
+
+table, tr, td {
+  border: 1px solid #000;
+  border-collapse: collapse;
+  padding: 3em;
+  margin: 1em;
+}
