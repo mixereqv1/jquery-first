@@ -21,7 +21,7 @@
             // $(document).ready(e => {
             //     $('dt').click(function() {
             //        $(this).next().toggle(500);
-            //     }) 
+            //     })
             // })
 
             // $(document).ready(e => {
@@ -30,15 +30,77 @@
             //     })
             // })
 
-            $(document).ready(e => {
-                $('tr:nth-of-type(3n) td:nth-of-type(3n+1), tr:nth-of-type(3n+1) td:nth-of-type(3n+2), tr:nth-of-type(3n+2) td:nth-of-type(3n)').click(function() {
-                    $(this).css('background', 'red');
+            // $(document).ready(e => {
+            //     $('tr:nth-of-type(3n) td:nth-of-type(3n+1), tr:nth-of-type(3n+1) td:nth-of-type(3n+2), tr:nth-of-type(3n+2) td:nth-of-type(3n)').click(function() {
+            //         $(this).css('background', 'red');
+            //     })
+            //     $('tr:nth-of-type(3n) td:nth-of-type(3n+2), tr:nth-of-type(3n+1) td:nth-of-type(3n), tr:nth-of-type(3n+2) td:nth-of-type(3n+1)').click(function() {
+            //         $(this).css('background', 'blue');
+            //     })
+            //     $('tr:nth-of-type(3n) td:nth-of-type(3n), tr:nth-of-type(3n+1) td:nth-of-type(3n+1), tr:nth-of-type(3n+2) td:nth-of-type(3n+2)').click(function() {
+            //         $(this).css('background', 'green');
+            //     })
+            // })
+
+            // $(document).ready(e => {
+            //     $('p').click(function() {
+            //         // if($(this).css('color') == 'rgb(0, 0, 0)') {
+            //         //     $(this).css('color','rgb(255, 17, 0)');
+            //         // } else {
+            //         //     $(this).css('color','rgb(0, 0, 0)');
+            //         // }
+            //         // alert($(this).css('font-size'));
+            //         // $size = parseInt($(this).css('font-size'));
+            //         // $size++;
+            //         // $(this).css('font-size',$size + 'px');
+            //         $(this).toggleClass('colored');
+            //     })
+            // })
+
+            // $(document).ready(e => {
+            //     $('.img').click(function() {
+            //         $(this).toggleClass('featured');
+            //     })
+            // })
+
+            $(document).ready(a => {
+                // $('td').mouseenter(function() {
+                //     $(this).css('border','5px solid #000');
+                // })
+                // $('td').mouseleave(function() {
+                //     $(this).css('border','1px solid #000');
+                // })
+                // $('td').click(function() {
+                //     $(this).toggleClass('colored');
+                // })
+
+                $('td').mouseenter(function() {
+                    $id = parseInt($(this).text());
+                    $id = $id % 5 - 1;
+                    $(this).toggleClass('featured');
+                    $(this).next().toggleClass('featured');
+                    $(this).prev().toggleClass('featured');
+                    $(this).parent().prev().children().eq($id).toggleClass('featured');
+                    $(this).parent().next().children().eq($id).toggleClass('featured');
                 })
-                $('tr:nth-of-type(3n) td:nth-of-type(3n+2), tr:nth-of-type(3n+1) td:nth-of-type(3n), tr:nth-of-type(3n+2) td:nth-of-type(3n+1)').click(function() {
-                    $(this).css('background', 'blue');
+                $('td').mouseleave(function() {
+                    $id = parseInt($(this).text());
+                    $id = $id % 5 - 1;
+                    $(this).toggleClass('featured');
+                    $(this).next().toggleClass('featured');
+                    $(this).prev().toggleClass('featured');
+                    $(this).parent().prev().children().eq($id).toggleClass('featured');
+                    $(this).parent().next().children().eq($id).toggleClass('featured');
                 })
-                $('tr:nth-of-type(3n) td:nth-of-type(3n), tr:nth-of-type(3n+1) td:nth-of-type(3n+1), tr:nth-of-type(3n+2) td:nth-of-type(3n+2)').click(function() {
-                    $(this).css('background', 'green');
+                $('td').click(function() {
+                    $id = parseInt($(this).text());
+                    $id = $id % 5 - 1;
+
+                    $(this).toggleClass('colored');
+                    $(this).next().toggleClass('colored');
+                    $(this).prev().toggleClass('colored');
+                    $(this).parent().prev().children().eq($id).toggleClass('colored');
+                    $(this).parent().next().children().eq($id).toggleClass('colored');
                 })
             })
 
@@ -48,7 +110,33 @@
 
     <body>
 
-        <table>
+        <!-- <img src="https://www.belightsoft.com/products/imagetricks/img/intro-video-poster@2x.jpg" alt="" class="img">
+        <img src="https://www.belightsoft.com/products/imagetricks/img/intro-video-poster@2x.jpg" alt="" class="img">
+        <img src="https://www.belightsoft.com/products/imagetricks/img/intro-video-poster@2x.jpg" alt="" class="img">
+        <img src="https://www.belightsoft.com/products/imagetricks/img/intro-video-poster@2x.jpg" alt="" class="img"> -->
+
+        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ab, ipsa voluptates architecto nostrum itaque
+            quisquam nihil soluta dolore pariatur laborum tenetur labore delectus vel quis aperiam explicabo possimus eius.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa sint nemo voluptate ipsum, illum fuga cum
+            praesentium distinctio quo suscipit facere, mollitia saepe. Rerum amet a mollitia quidem incidunt illum.
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ab, ipsa voluptates architecto nostrum itaque
+            quisquam nihil soluta dolore pariatur laborum tenetur labore delectus vel quis aperiam explicabo possimus eius.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa sint nemo voluptate ipsum, illum fuga cum
+            praesentium distinctio quo suscipit facere, mollitia saepe. Rerum amet a mollitia quidem incidunt illum.
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ab, ipsa voluptates architecto nostrum itaque
+            quisquam nihil soluta dolore pariatur laborum tenetur labore delectus vel quis aperiam explicabo possimus eius.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa sint nemo voluptate ipsum, illum fuga cum
+            praesentium distinctio quo suscipit facere, mollitia saepe. Rerum amet a mollitia quidem incidunt illum.
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ab, ipsa voluptates architecto nostrum itaque
+            quisquam nihil soluta dolore pariatur laborum tenetur labore delectus vel quis aperiam explicabo possimus eius.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa sint nemo voluptate ipsum, illum fuga cum
+            praesentium distinctio quo suscipit facere, mollitia saepe. Rerum amet a mollitia quidem incidunt illum.
+        </p> -->
+
+        <!-- <table>
             <tr>
                 <td>1</td>
                 <td>2</td>
@@ -79,7 +167,7 @@
                 <td>2</td>
                 <td>3</td>
             </tr>
-        </table>
+        </table> -->
 
         <!-- <div id="show">pokaz</div>
             <div id="hide">ukryj</div>
@@ -97,7 +185,7 @@
                 <dt>Drukarka</dt>
                 <dd>Opis drukarki</dd>
             </dl> -->
-        <!-- <script src="main.js"></script> -->
+        <script src="main.js"></script>
     </body>
 
 </html>
